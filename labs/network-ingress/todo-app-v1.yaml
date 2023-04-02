@@ -22,7 +22,7 @@ spec:
       - resources:
           limits:
             cpu: '0.5'
-        image: quay.io/redhattraining/todo-angular:v1.1
+        image: hcr.tsol.io/quay.io/redhattraining/todo-angular:v1.1
         name: todo-http
         ports:
         - containerPort: 8080

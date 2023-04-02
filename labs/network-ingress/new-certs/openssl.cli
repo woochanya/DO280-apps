@@ -1,0 +1,12 @@
+
+# Create CA key/cert 
+openssl genrsa -out skt-local-ca.key 2048
+openssl req -x509 -new -nodes -days 3650 -subj /C=KR/ST=Seoul/L=Seoul/O=SK telecom/OU=Solution Group/CN=skt.local -key skt-local-ca.key -out skt-local-ca.crt
+
+# Create CSR
+openssl genrsa -out training.key 4096
+openssl req -new -key training.key -out training.csr -subj "/C=US/ST=North Carolina/L=Raleigh/O=Red Hat/CN=todo-https.apps.ocp10.skt.local"
+
+# Create test cert from CA above
+openssl x509 -req -in training.csr -CA skt-local-ca.crt -CAkey skt-local-ca.key -CAcreateserial -out training.crt -days 1825 -sha256 -extfile training.ext
+

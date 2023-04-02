@@ -29,9 +29,17 @@ spec:
           name: todo-http
         - containerPort: 8443
           name: todo-https
+        volumeMounts:
+        - name: tls-certs
+          readOnly: true
+          mountPath: /usr/local/etc/ssl/certs
       resources:
         limits:
           memory: 64Mi
+      volumes:
+      - name: tls-certs
+        secret:
+          secretName: todo-certs
 ---
 apiVersion: v1
 kind: Service

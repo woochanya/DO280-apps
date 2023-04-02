@@ -5,15 +5,15 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      deployment: CHANGE_ME
+      deployment: hello
   ingress:
     - from:
       - namespaceSelector:
           matchLabels:
-            name: CHANGE_ME
+            name: network-test
         podSelector:
           matchLabels:
-            deployment: CHANGE_ME
+            deployment: sample-app
       ports:
-      - port: CHANGE_ME
-        protocol: CHANGE_ME
+      - port: 8080
+        protocol: TCP

@@ -20,7 +20,7 @@ items:
           app: loadtest
       spec:
         containers:
-        - image: quay.io/redhattraining/loadtest:v1.0
+        - image: hcr.tsol.io/quay.io/redhattraining/loadtest:v1.0
           name: loadtest
           resources:
             requests:
@@ -56,7 +56,7 @@ items:
       app: loadtest
     name: loadtest
   spec:
-    host: "loadtest.apps.ocp4.example.com"
+    host: "loadtest.apps.ocp10.skt.local"
     port:
       targetPort: 8080
     subdomain: ""
