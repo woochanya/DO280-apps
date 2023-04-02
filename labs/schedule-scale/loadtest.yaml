@@ -20,7 +20,7 @@ items:
           app: loadtest
       spec:
         containers:
-        - image: quay.io/redhattraining/loadtest:v1.0
+        - image: hcr.tsol.io/quay.io/redhattraining/loadtest:v1.0
           name: loadtest
           resources: {}
   status: {}
